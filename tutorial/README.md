@@ -12,7 +12,7 @@ pipenv install
 ```
 
 ### 手動で環境構築する場合
-- numpy = "*"
+- numpy
 - matplotlib
 - ipython 
 - scipy

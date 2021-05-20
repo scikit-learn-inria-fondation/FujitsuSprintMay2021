@@ -1,7 +1,7 @@
 matplotlib
-ipython 
-pandas 
-numpy 
-scipy 
-sklearn 
-gudhi == 3.4.1
+ipython
+pandas
+numpy
+scipy
+sklearn
+gudhi (== 3.4.1)

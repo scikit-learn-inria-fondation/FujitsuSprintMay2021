@@ -4,14 +4,16 @@
 
 ## Requierements
 - python 3.8
-- pipenv 
 
 ### Install
 ```
 pipenv install
 ```
-
-### 手動で環境構築する場合
+または
+```
+pip install -r requirements.txt
+```
+### 必要ライブラリ
 - numpy
 - matplotlib
 - ipython 

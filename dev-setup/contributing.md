@@ -80,6 +80,8 @@ and how to set up your git repository:
     pip install cython pytest pytest-cov flake8 mypy
     ```
 
+    追加NP:ゼロからのインストールの場合は`wheel`（と`numpy`と`scipy`？）も必要です。
+
 5.  Install scikit-learn in editable mode:
 
     編集可能モードでscikit-learnをインストール:

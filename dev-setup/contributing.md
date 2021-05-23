@@ -166,14 +166,14 @@ contribution complies with the following rules before marking a PR as
 1.  **Give your pull request a helpful title** that summarises what your
     contribution does. This title will often become the commit message
     once merged so it should summarise your contribution for posterity.
-    In some cases \"Fix \<ISSUE TITLE\>\" is enough. \"Fix \#\<ISSUE
-    NUMBER\>\" is never a good title.
+    In some cases "Fix \<ISSUE TITLE\>" is enough. "Fix \#\<ISSUE
+    NUMBER\>" is never a good title.
 
 2.  **Make sure your code passes the tests**. The whole test suite can
     be run with `pytest`, but it is usually not recommended
     since it takes a long time. It is often enough to only run the test
     related to your changes: for example, if you changed something in
-    [sklearn/linear_model/logistic.py]{.title-ref}, running the
+    `sklearn/linear_model/logistic.py`, running the
     following commands will usually be enough:
 
     -   `pytest sklearn/linear_model/logistic.py` to make
@@ -192,14 +192,14 @@ contribution complies with the following rules before marking a PR as
     There may be other failing tests, but they will be caught by the CI
     so you don\'t need to run the whole test suite locally. For
     guidelines on how to use `pytest` efficiently, see the
-    `pytest_tips`.
+    [Useful pytest aliases and flags](https://scikit-learn.org/stable/developers/tips.html#pytest-tips).
 
 3.  **Make sure your code is properly commented and documented**, and
     **make sure the documentation renders properly**. To build the
     documentation, please refer to our
-    `contribute_documentation` guidelines.
+    [Documentation](https://scikit-learn.org/stable/developers/contributing.html#contribute-documentation) guidelines.
     The CI will also build the docs: please refer to
-    `generated_doc_CI`.
+    [Generated documentation on CircleCI](https://scikit-learn.org/stable/developers/contributing.html#generated-doc-ci).
 
 4.  **Tests are necessary for enhancements to be accepted**. Bug-fixes
     or new features should be provided with [non-regression
@@ -216,9 +216,9 @@ contribution complies with the following rules before marking a PR as
     `upstream` remote):
 
     ```
-    bash \$
+    bash $
 
-    git diff upstream/main -u \-- \"\*.py\" \| flake8 \--diff
+    git diff upstream/main -u -- "*.py" | flake8 --diff
     ```
 
     or `make flake8-diff` which should work on unix-like
@@ -260,9 +260,9 @@ contribution complies with the following rules before marking a PR as
     links when possible.
 
 11. The user guide should also include expected time and space
-    complexity of the algorithm and scalability, e.g. \"this algorithm
-    can scale to a large number of samples \> 100000, but does not scale
-    in dimensionality: n_features is expected to be lower than 100\".
+    complexity of the algorithm and scalability, e.g. `this algorithm
+    can scale to a large number of samples > 100000, but does not scale
+    in dimensionality: n_features is expected to be lower than 100`.
 
 You can also check our [Code Review Guidelines](https://scikit-learn.org/stable/developers/contributing.html#code-review) to
 get an idea of what reviewers will expect.
@@ -273,9 +273,9 @@ You can check for common programming errors with the following tools:
     check with:
 
     ```
-    bash \$
+    bash $
 
-    pip install pytest pytest-cov pytest \--cov sklearn
+    pip install pytest pytest-cov pytest --cov sklearn
     path/to/tests_for_package
     ```
 
@@ -284,7 +284,7 @@ You can check for common programming errors with the following tools:
     Run static analysis with `mypy`:
 
     ```
-    bash \$
+    bash $
 
     mypy sklearn
     ```

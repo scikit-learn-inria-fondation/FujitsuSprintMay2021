@@ -19,7 +19,7 @@ issue to you.
 
 The preferred way to contribute to scikit-learn is to fork the [main
 repository](https://github.com/scikit-learn/scikit-learn/) on GitHub,
-then submit a \"pull request\" (PR).
+then submit a "pull request" (PR).
 
 In the first few steps, we explain how to locally install scikit-learn,
 and how to set up your git repository:
@@ -29,7 +29,7 @@ and how to set up your git repository:
 
 2.  Fork the [project
     repository](https://github.com/scikit-learn/scikit-learn): click on
-    the \'Fork\' button near the top of the page. This creates a copy of
+    the 'Fork' button near the top of the page. This creates a copy of
     the code under your account on the GitHub user account. For more
     details on how to fork a repository see [this
     guide](https://help.github.com/articles/fork-a-repo/).

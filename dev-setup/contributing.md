@@ -1,5 +1,7 @@
 # Development setup
 
+# 開発設定
+
 To avoid duplicating work, it is highly advised that you search through
 the [issue tracker](https://github.com/scikit-learn/scikit-learn/issues)
 and the [PR list](https://github.com/scikit-learn/scikit-learn/pulls).
@@ -8,24 +10,46 @@ non-trivial feature, it\'s recommended to first open an issue in the
 [issue tracker](https://github.com/scikit-learn/scikit-learn/issues) to
 get some feedbacks from core developers.
 
+作業の重複を避けるために、[issue tracker](https://github.com/scikit-learn/scikit-learn/issues)
+と[PRリスト](https://github.com/scikit-learn/scikit-learn/pulls)を検索することを強くお勧めします。
+重複した作業について疑問がある場合、または重要な機能に取り組みたい場合は、
+最初に[issue tracker](https://github.com/scikit-learn/scikit/issues)で課題を開いて、
+コア開発者からフィードバックを得ることが推奨されます。
+
+
+
 One easy way to find an issue to work on is by applying the \"help
 wanted\" label in your search. This lists all the issues that have been
 unclaimed so far. In order to claim an issue for yourself, please
 comment exactly `take` on it for the CI to automatically assign the
 issue to you.
 
+取り組むべき問題を見つける簡単な方法の1つは、検索に「help wanted」ラベルを適用することです。
+これは、これまでに請求されていないすべての問題を一覧表示します。自分で問題を申し立てるには、
+CIが自動的に問題を割り当てるように、`take`とコメントしてください。
+
 
 ## How to contribute
+
+## コントリビュートする方法
 
 The preferred way to contribute to scikit-learn is to fork the [main
 repository](https://github.com/scikit-learn/scikit-learn/) on GitHub,
 then submit a "pull request" (PR).
 
+scikit-learnにコントリビュートするための好ましい方法は、
+GitHubで[メインリポジトリ](https://github.com/scikit-learn/scikit-learn/)をフォークしてから、
+「Pull Request」（PR）を送信することです。
+
 In the first few steps, we explain how to locally install scikit-learn,
 and how to set up your git repository:
 
+最初のいくつかのステップでは、scikit-learnをローカルにインストールする方法と、gitリポジトリを設定する方法について説明します。
+
 1.  [Create an account](https://github.com/join) on GitHub if you do not
     already have one.
+    
+    まだアカウントを持っていない場合は、GitHubで[アカウントを作成](https://github.com/join)します。
 
 2.  Fork the [project
     repository](https://github.com/scikit-learn/scikit-learn): click on
@@ -33,16 +57,24 @@ and how to set up your git repository:
     the code under your account on the GitHub user account. For more
     details on how to fork a repository see [this
     guide](https://help.github.com/articles/fork-a-repo/).
+    
+    [プロジェクトのリポジトリ](https://github.com/scikit-learn/scikit-learn)をフォークします：
+    ページの上部にある[Fork]ボタンをクリックします。これにより、GitHubユーザーアカウントにコードのコピーが作成されます。
+    リポジトリをフォークする方法の詳細については、[このガイド](https://help.github.com/articles/fork-a-repo/)を参照してください。
 
 3.  Clone your fork of the scikit-learn repo from your GitHub account to
     your local disk:
+    
+    scikit-learnリポジトリのフォークをGitHubアカウントからローカルディスクにクローンします。
 
     ```
-    git clone <git@github.com>:YourLogin/scikit-learn.git # add --depth 1 if your connection is slow
+    git clone <git@github.com>:YourLogin/scikit-learn.git # 接続が遅かったら、--depth 1を追加する
     cd scikit-learn
     ```
 
 4.  Install the development dependencies:
+
+    開発の依存関係をインストール:
 
     ```
     pip install cython pytest pytest-cov flake8 mypy
@@ -50,16 +82,23 @@ and how to set up your git repository:
 
 5.  Install scikit-learn in editable mode:
 
+    編集可能モードでscikit-learnをインストール:
+
     ```
     pip install --no-build-isolation --editable .
     ```
 
     If you receive errors in building scikit-learn, see the
-    `install_bleeding_edge` section.
+    [Building from source](https://scikit-learn.org/stable/developers/advanced_installation.html#install-bleeding-edge) section.
+    
+    scikit-learnのビルドでエラーが発生した場合は、[Building from source](https://scikit-learn.org/stable/developers/advanced_installation.html#install-bleeding-edge)セクションを参照してください。
 
 6.  Add the `upstream` remote. This saves a reference to the main
     scikit-learn repository, which you can use to keep your repository
     synchronized with the latest changes:
+    
+    `upstream`リモートを追加します。これにより、メインのscikit-learnリポジトリへの参照が保存されます。
+    これを使用して、リポジトリを最新の変更と同期させることができます。
 
     ```
     git remote add upstream https://github.com/scikit-learn/scikit-learn.git
@@ -68,6 +107,9 @@ and how to set up your git repository:
 You should now have a working installation of scikit-learn, and your git
 repository properly configured. The next steps now describe the process
 of modifying code and submitting a PR:
+
+これで、scikit-learnが正常にインストールされ、gitリポジトリが適切に構成されているはずです。
+次のステップでは、コードを変更してPRを送信するプロセスについて説明します。
 
 7.  Synchronize your `main` branch with the `upstream/main` branch, more
     details on [GitHub

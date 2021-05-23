@@ -114,6 +114,8 @@ of modifying code and submitting a PR:
 7.  Synchronize your `main` branch with the `upstream/main` branch, more
     details on [GitHub
     Docs](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork):
+    
+    `main`ブランチを `upstream/main`ブランチと同期します。詳細については、[GitHub Docs](https://docs.github.com/ja/github/collaborating-with-issues-and-pull-requests/working-with-forks/syncing-a-fork)をご覧ください。
 
     ```
     git checkout main
@@ -123,26 +125,40 @@ of modifying code and submitting a PR:
 
 8.  Create a feature branch to hold your development changes:
 
+    開発の変更を保持するフィーチャーブランチを作成して、
+
     ```
     git checkout -b my_feature
     ```
 
     and start making changes. Always use a feature branch. It\'s good
     practice to never work on the `main` branch!
+    
+    変更を加え始めます。常にフィーチャーブランチを使用してください。
+    `main`ブランチで作業しないことをお勧めします！
 
 9.  (**Optional**) Install [pre-commit](https://pre-commit.com/#install)
     to run code style checks before each commit:
 
+    (**オプション**)[pre-commit](https://pre-commit.com/#install)をインストールして、
+    各コミットの前にコードスタイルチェックを実行します：
+    
     ```
     pip install pre-commit pre-commit install
     ```
 
     pre-commit checks can be disabled for a particular commit with `git
     commit -n`.
+    
+    あるコミットに対して事前コミットチェックを無効にするため、`git commit -n`を使用できます。
+    
 
 10. Develop the feature on your feature branch on your computer, using
     Git to do the version control. When you\'re done editing, add
     changed files using `git add` and then `git commit`:
+    
+    Gitを使用してバージョン管理を行い、フィーチャーブランチでフィーチャーを開発します。
+    編集が完了したら、`git add`を使用して変更されたファイルを追加してから`git commit`を使用します。
 
     ```
     git add modified_files
@@ -151,6 +167,8 @@ of modifying code and submitting a PR:
 
     to record your changes in Git, then push the changes to your GitHub
     account with:
+    
+    これにより、Gitでの変更が記録され、次に変更コミットをGitHubアカウントにプッシュします：
 
     ```
     git push -u origin my_feature
@@ -161,9 +179,15 @@ of modifying code and submitting a PR:
     instructions to create a pull request from your fork. This will send
     an email to the committers. You may want to consider sending an
     email to the mailing list for more visibility.
+    
+    ここの[アドバイス](https://help.github.com/articles/creating-a-pull-request-from-a-fork)の指示に従って、
+    フォークからプルリクエストPRを作成します。これにより、コミッターにメールが送信されます。
+    
 
 If you are modifying a Cython module, you have to re-compile after
 modifications and before testing them:
+
+Cythonモジュールを変更する場合は、変更後、テストする前に再コンパイルする必要があります：
 
 ```
 pip install --no-build-isolation -e .
@@ -173,8 +197,12 @@ pip install --no-build-isolation -e .
 Use the `--no-build-isolation` flag to avoid compiling the whole project
 each time, only the files you have modified.
 
+`--no-build-isolation`フラグを使用して、変更したファイルのみを毎回プロジェクト全体でコンパイルしないようにします。
+
 It is often helpful to keep your local feature branch synchronized with
 the latest changes of the main scikit-learn repository:
+
+定期的にローカルフィーチャーブランチをメインのscikit-learnリポジトリの最新の変更と同期させることを勧めます：
 
 ```
 git fetch upstream
@@ -185,6 +213,11 @@ Subsequently, you might need to solve the conflicts. You can refer to
 the [Git documentation related to resolving merge conflict using the
 command
 line](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/).
+
+TODO TODO
+
+その後、コンフリクトを解決する必要があるかもしれません。 [を使用したマージ競合の解決に関連するGitドキュメントを参照できます。
+コマンドライン]（https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/）。
 
 
 ### Pull request checklist

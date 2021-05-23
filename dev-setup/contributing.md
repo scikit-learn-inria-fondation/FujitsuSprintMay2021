@@ -214,13 +214,14 @@ the [Git documentation related to resolving merge conflict using the
 command
 line](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/).
 
-TODO TODO
+その後、コンフリクトを解決する必要があるかもしれません。
+[コマンドラインを使用したマージのコンフリクトの解決に関連するGitドキュメント](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/)を参照できます。
 
-その後、コンフリクトを解決する必要があるかもしれません。 [を使用したマージ競合の解決に関連するGitドキュメントを参照できます。
-コマンドライン]（https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/）。
 
 
 ### Pull request checklist
+
+### プルリクエストのチェックリスト
 
 Before a PR can be merged, it needs to be approved by two core
 developers. Please prefix the title of your pull request with `[MRG]` if
@@ -234,9 +235,21 @@ collaborators. WIPs often benefit from the inclusion of a [task
 list](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments)
 in the PR description.
 
+PRをマージする前に、2人のコア開発者による承認が必要です。投稿が完了し、
+詳細なレビューを受ける必要がある場合は、プルリクエストのタイトルの前に`[MRG]`を付けてください。
+不完全な投稿（完全なレビューを受け取る前にさらに作業を行うことが予想される場合）は、
+タイトルに `[WIP]`（進行中の作業を示すため）を付け、成熟したら `[MRG]`に変更する必要があります。
+`WIP`は、重複した作業を無効にするために何かに取り組んでいることを示したり、
+フィーチャーやAPIの広範なレビューを要求したり、共同作業者を探したりする場合に役立ちます。
+`WIP`は、PRの説明に[タスクリスト](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments)
+を含めることで恩恵を受けることがよくあります。
+
 In order to ease the reviewing process, we recommend that your
 contribution complies with the following rules before marking a PR as
 `[MRG]`. The **bolded** ones are especially important:
+
+レビュープロセスを容易にするために、PRを`[MRG]`としてマークする前に、
+投稿が次のルールに準拠することをお勧めします。 **太字**のものは特に重要です：
 
 1.  **Give your pull request a helpful title** that summarises what your
     contribution does. This title will often become the commit message

@@ -271,7 +271,7 @@ contribution complies with the following rules before marking a PR as
     `sklearn/linear_model/logistic.py`, running the
     following commands will usually be enough:
 
-    **コードがテストに合格していることを確認してください。** テストスイート全体を `pytest`で実行できますが、
+    **コードがテストに合格していることを確認してください。** テスト全体を `pytest`で実行できますが、
     時間がかかるため、通常はお勧めしません。多くの場合、変更に関連するテストのみを実行するだけで十分です。
     たとえば、`sklearn/linear_model/_logistic.py`で何かを変更した場合、通常は次のコマンドを実行するだけで十分です。
     
@@ -293,7 +293,7 @@ contribution complies with the following rules before marking a PR as
     [Useful pytest aliases and flags](https://scikit-learn.org/stable/developers/tips.html#pytest-tips).
 
     他に失敗したテストがあるかもしれませんが、それらはCIによってキャッチされるので、
-    テストスイート全体をローカルで実行する必要はありません。`pytest`を効率的に使用するための
+    テスト全体をローカルで実行する必要はありません。`pytest`を効率的に使用するための
     ガイドラインについては、[Useful pytest aliases and flags](https://scikit-learn.org/stable/developers/tips.html#pytest-tips)を参照してください。
     
 3.  **Make sure your code is properly commented and documented**, and

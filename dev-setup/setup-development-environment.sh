@@ -7,7 +7,6 @@
 # of the scikit-learn repository
 
 set -e
-set -o pipefail
 
 # setup and activate a virtual environment
 
@@ -16,6 +15,7 @@ github_user=scitkit-devsprint-japan
 
 if [ -x "$(command -v pyenv)" ] ; then
   # use pyenv
+  eval "$(pyenv init -)"
   if pyenv virtualenvs | grep -q $venv_name ; then
     echo "There is already a pyenv virtualenv $venv_name, using it!"
   else

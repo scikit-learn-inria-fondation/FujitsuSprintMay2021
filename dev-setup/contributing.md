@@ -153,7 +153,7 @@ of modifying code and submitting a PR:
     pre-commit checks can be disabled for a particular commit with `git
     commit -n`.
     
-    あるコミットに対して事前コミットチェックを無効にするため、`git commit -n`を使用できます。
+    事前コミットチェックを無効にしたい場合は、`git commit -n`を使用します。
     
 
 10. Develop the feature on your feature branch on your computer, using
@@ -271,7 +271,7 @@ contribution complies with the following rules before marking a PR as
     `sklearn/linear_model/logistic.py`, running the
     following commands will usually be enough:
 
-    **コードがテストに合格していることを確認してください** テストスイート全体を `pytest`で実行できますが、
+    **コードがテストに合格していることを確認してください。** テストスイート全体を `pytest`で実行できますが、
     時間がかかるため、通常はお勧めしません。多くの場合、変更に関連するテストのみを実行するだけで十分です。
     たとえば、`sklearn/linear_model/_logistic.py`で何かを変更した場合、通常は次のコマンドを実行するだけで十分です。
     
@@ -303,7 +303,7 @@ contribution complies with the following rules before marking a PR as
     The CI will also build the docs: please refer to
     [Generated documentation on CircleCI](https://scikit-learn.org/stable/developers/contributing.html#generated-doc-ci).
     
-    **コードが適切にコメント化および文書化されていることを確認してください**そして**文書が適切にレンダリングされていることを確認してください**。ドキュメントを作成するには、
+    **コードが適切にコメント化および文書化されていることを確認してください。** そして**文書が適切にレンダリングされていることを確認してください。** ドキュメントを作成するには、
     [Documentation](https://scikit-learn.org/stable/developers/contributing.html#contribute-documentation)
     ガイドラインを参照してください。
 
@@ -316,7 +316,7 @@ contribution complies with the following rules before marking a PR as
     the time of the PR, the non-regression tests should fail for the
     code base in the `main` branch and pass for the PR code.
 
-    **拡張機能が受け入れられるにはテストが必要です** バグ修正または新フィーチャーは、
+    **拡張機能が受け入れられるにはテストが必要です。** バグ修正または新フィーチャーは、
     [非回帰テスト](https://ja.wikipedia.org/wiki/%E5%9B%9E%E5%B8%B0%E3%83%86%E3%82%B9%E3%83%88)
     で提供する必要があります。これらのテストは、修正またはフィーチャーの正しい動作を検証します。
     このようにして、コードベースのさらなる変更が許可され、目的の動作と一致します。
@@ -329,7 +329,7 @@ contribution complies with the following rules before marking a PR as
     `above <upstream>` to set up the
     `upstream` remote):
     
-    ** PRがPEP8違反を追加しないことを確認してください** 変更したコードを確認するには、
+    **PRがPEP8違反を追加しないことを確認してください。** 変更したコードを確認するには、
     次のコマンドを実行するか（`upstream`リモートを設定の手続きは上記述べています）、
     ```
     git diff upstream/main -u -- "*.py" | flake8 --diff

@@ -185,7 +185,7 @@ of modifying code and submitting a PR:
     
     ここの[アドバイス](https://help.github.com/articles/creating-a-pull-request-from-a-fork)の指示に従って、
     フォークからプルリクエストPRを作成します。これにより、コミッターにメールが送信されます。
-    メーリングリストにメールを送信することを検討することをお勧めします。
+    より幅広く周知するためにメーリングリストへメールすることも検討してください。
     
 
 If you are modifying a Cython module, you have to re-compile after

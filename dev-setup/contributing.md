@@ -292,7 +292,7 @@ contribution complies with the following rules before marking a PR as
     guidelines on how to use `pytest` efficiently, see the
     [Useful pytest aliases and flags](https://scikit-learn.org/stable/developers/tips.html#pytest-tips).
 
-    他の失敗したテストがあるかもしれませんが、それらはCIによってキャッチされるので、
+    他に失敗したテストがあるかもしれませんが、それらはCIによってキャッチされるので、
     テストスイート全体をローカルで実行する必要はありません。`pytest`を効率的に使用するための
     ガイドラインについては、[Useful pytest aliases and flags](https://scikit-learn.org/stable/developers/tips.html#pytest-tips)を参照してください。
     
@@ -338,7 +338,7 @@ contribution complies with the following rules before marking a PR as
     or `make flake8-diff` which should work on unix-like
     system.
 
-    または`makeflake8-diff`を実行します。これはUnixなシステムで動作します。
+    または`makeflake8-diff`を実行します。これはUnix系システムで動作します。
     
     
 6.  Follow the [coding-guidelines](https://scikit-learn.org/stable/developers/develop.html#coding-guidelines).
@@ -364,7 +364,7 @@ contribution complies with the following rules before marking a PR as
     without using the keywords (e.g., `See also #1234`).
 
     多くの場合、プルリクエストは1つ以上の他の問題（またはプルリクエスト）を解決します。
-    プルリクエストをマージすることで他の問題/PRを閉じる場合は、[キーワードを使用してそれらへのリンクを作成する](https://github.com/blog/1506-closeing-issues-via-pull-requests/)
+    プルリクエストをマージすることで他の問題/PRを閉じる場合は、[キーワードを使用してそれらへのリンクを作成してください](https://github.com/blog/1506-closeing-issues-via-pull-requests/)
     （例： `Fixes ＃1234`; それぞれの前にキーワードが付いている限り、複数の問題/PRが可能）。
     マージすると、これらの問題/PRはGitHubによって自動的に閉じられます。
     プルリクエストが単に他の問題/PRに関連している場合は、キーワードを使用せずにそれらへの
@@ -400,8 +400,8 @@ contribution complies with the following rules before marking a PR as
     links when possible.
     
     新フィーチャーには、メンテナンスのオーバーヘッドがあります。
-    PR作成者は、少なくとも最初は、提出するコードの保守に参加することを期待しています。
-    新しいフィーチャーは、ユーザーガイドの説明ドキュメントと小さなコードスニペットで説明する必要があります。
+    PR作成者は、少なくとも最初は提出するコードの保守に参加することが期待されます。
+    新しいフィーチャーは、ユーザーガイドの説明ドキュメントと小さなコードスニペットで説明される必要があります。
     必要に応じて、可能であればPDFリンクを使用して、文献に参照を追加してください。
 
 11. The user guide should also include expected time and space
@@ -411,7 +411,7 @@ contribution complies with the following rules before marking a PR as
     
     ユーザーガイドには、アルゴリズムの予想される時間とスペースの複雑さ、
     およびスケーラビリティも含める必要があります。
-    「このアルゴリズムは、100000を超える多数のサンプルにスケーリングできますが、次元数はスケーリングしません。
+    例：「このアルゴリズムは、100000を超える多数のサンプルにスケーリングできますが、次元数はスケーリングしません。
     n_featuresは100未満であると予想されます」。
 
 You can also check our [Code Review Guidelines](https://scikit-learn.org/stable/developers/contributing.html#code-review) to
@@ -427,7 +427,7 @@ You can check for common programming errors with the following tools:
 -   Code with a good unittest coverage (at least 80%, better 100%),
     check with:
     
-    良好な単体テストカバレッジ（少なくとも80％、より良い100％）のコード、以下を確認してください：
+    良好な単体テストカバレッジ（少なくとも80％、より良い100％）のコードについては、以下を確認してください：
 
     ```
     pip install pytest pytest-cov
@@ -440,7 +440,7 @@ You can check for common programming errors with the following tools:
 
 -   Run static analysis with `mypy`:
 
-    `mypy`で静的分析を実行すると、
+    `mypy`で静的分析を実行します：
     
     ```
     mypy sklearn

@@ -24,9 +24,9 @@ unclaimed so far. In order to claim an issue for yourself, please
 comment exactly `take` on it for the CI to automatically assign the
 issue to you.
 
-取り組むべき問題を見つける簡単な方法の1つは、検索に「help wanted」ラベルを適用することです。
-これは、これまでに請求されていないすべての問題を一覧表示します。自分で問題を申し立てるには、
-CIが自動的に問題を割り当てるように、`take`とコメントしてください。
+取り組むべきissueを見つける簡単な方法の1つは、検索に「help wanted」ラベルを適用することです。
+これは、これまでに請求されていないすべてのissueを一覧表示します。自分でissueを申し立てるには、
+CIが自動的にissueを割り当てるように、`take`とコメントしてください。
 
 
 ## How to contribute
@@ -185,6 +185,7 @@ of modifying code and submitting a PR:
     
     ここの[アドバイス](https://help.github.com/articles/creating-a-pull-request-from-a-fork)の指示に従って、
     フォークからプルリクエストPRを作成します。これにより、コミッターにメールが送信されます。
+    メーリングリストにメールを送信することを検討することをお勧めします。
     
 
 If you are modifying a Cython module, you have to re-compile after
@@ -363,11 +364,11 @@ contribution complies with the following rules before marking a PR as
     simply related to some other issues/PRs, create a link to them
     without using the keywords (e.g., `See also #1234`).
 
-    多くの場合、プルリクエストは1つ以上の他の問題（またはプルリクエスト）を解決します。
-    プルリクエストをマージすることで他の問題/PRを閉じる場合は、[キーワードを使用してそれらへのリンクを作成してください](https://github.com/blog/1506-closeing-issues-via-pull-requests/)
-    （例： `Fixes ＃1234`; それぞれの前にキーワードが付いている限り、複数の問題/PRが可能）。
-    マージすると、これらの問題/PRはGitHubによって自動的に閉じられます。
-    プルリクエストが単に他の問題/PRに関連している場合は、キーワードを使用せずにそれらへの
+    多くの場合、プルリクエストは1つ以上の他のissue（またはプルリクエスト）を解決します。
+    プルリクエストをマージすることで他のissue/PRを閉じる場合は、[キーワードを使用してそれらへのリンクを作成してください](https://github.com/blog/1506-closeing-issues-via-pull-requests/)
+    （例： `Fixes ＃1234`; それぞれの前にキーワードが付いている限り、複数のissue/PRが可能）。
+    マージすると、これらのissue/PRはGitHubによって自動的に閉じられます。
+    プルリクエストが単に他のissue/PRに関連している場合は、キーワードを使用せずにそれらへの
     リンクを作成します（例：`See also ＃1234`）。
     
     

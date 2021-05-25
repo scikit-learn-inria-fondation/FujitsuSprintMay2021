@@ -349,9 +349,9 @@ print(f"Number of correct prediction: "
 # %% [markdown]
 # しかし、この評価は信頼できるのでしょうか？それとも真実であるには良すぎるでしょうか？
 #
-# ## トレインテストデータの分割
+# ## トレーニング・テストデータ分割
 #
-# モデルのトレーニング時にデータのサブセットを除外し、後でモデルの評価に使用することで、
+# モデルの訓練時にデータの一部を除外して、それらを後でモデルの評価に使用することで、
 # 正しい評価を簡単に行うことができます。モデルの適合に使用されるデータはトレーニングデータと呼ばれ、
 # モデルの評価に使用されるデータはテストデータと呼ばれます。
 #
@@ -360,12 +360,15 @@ print(f"Number of correct prediction: "
 # %%
 adult_census_test = pd.read_csv('datasets/adult-census-numeric-test.csv')
 
+# %% [markdown]
+# 上でやったように、この新しいデータから入力特徴と予測するべきターゲットを分離します。
+
 # %%
 target_test = adult_census_test[target_name]
 data_test = adult_census_test.drop(columns=[target_name, ])
 
 # %% [markdown]
-# この新しいセットで利用可能な特徴とサンプルの数を確認できます。
+# この新しいデータセットで利用可能な特徴とサンプルの数を確認できます。
 
 # %%
 print(f"The testing dataset contains {data_test.shape[0]} samples and "
@@ -374,7 +377,7 @@ print(f"The testing dataset contains {data_test.shape[0]} samples and "
 # %% [markdown]
 #
 # 予測を計算して平均成功率を手動で計算する代わりに、
-# `score`を使用できます。分類の場合、このメソッドはパフォーマンスメトリックを返します。
+# メソッド`score`を使用できます。分類の場合、このメソッドはパフォーマンスメトリックを返します。
 
 # %%
 accuracy = model.score(data_test, target_test)
@@ -384,11 +387,11 @@ print(f"The test accuracy using a {model_name} is "
       f"{accuracy:.3f}")
 
 # %% [markdown]
-# `score`メソッドが呼び出されたときに、基になるメカニズムを確認しましょう。
+# `score`メソッドが呼び出されたときの、根本のメカニズムを確認しましょう。
 #
 # ![Predictor score diagram](figures/api_diagram-predictor.score.svg)
 #
-# スコアを計算するために、予測子は最初に（`predict`を使用して）予測を計算し、
+# スコアを計算するために、予測器は最初に（`predict`メソッドを使用して）予測を計算し、
 # 次にスコアリング関数を使用して真のターゲット`y`と予測を比較します。最後に、スコアが返されます。
 
 

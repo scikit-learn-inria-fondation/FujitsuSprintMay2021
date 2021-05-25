@@ -139,7 +139,7 @@ print(f"The dataset contains {adult_census.shape[1] - 1} features.")
 # * タスクに必要な情報が実際にデータセットに存在することを確認する必要があります。
 # * データを検査することは、特性を見つけるための良い方法です。
 #   これらは、データ収集中に発生する可能性があります
-#   （たとえば、センサーの誤動作や値の欠落）。また，データが後で処理される方法
+#   （たとえば、センサーの誤動作や値の欠落）。また、データが後で処理される方法
 #   （たとえば、上限値の設定）から発生する可能性もあります。
 
 # %% [markdown]
@@ -764,14 +764,14 @@ categorical_columns = categorical_columns_selector(data)
 #
 # データの性質（つまり、数値またはカテゴリ）に応じてデータを異なる方法で処理する必要があります。
 #
-# Scikit-learnは、`ColumnTransformer`という特定の列を特定の
-# トランスフォーマーに送信するクラスを提供します。
+# Scikit-learnは、`ColumnTransformer`という、特定の列を特定の
+# 変換器に送るクラスを提供します。
 # 
 # まず、データ型に応じて列を定義します：
 #
 # * **one-hot encoding**は、カテゴリ列に適用されます。
-#   また、`handle_unknown="ignore"`でまれなカテゴリによる潜在的な問題を解決するために使用します。
-# * **数値スケーリング**は、数値列に適用されます。
+#   また、`handle_unknown="ignore"`を使って、まれなカテゴリによる潜在的な問題を解決します。
+# * **数値スケーリング**は、標準化される数値特徴に適用されます。
 #
 
 # %%
@@ -781,7 +781,7 @@ categorical_preprocessor = OneHotEncoder(handle_unknown="ignore")
 numerical_preprocessor = StandardScaler()
 
 # %% [markdown]
-# トランスフォーマーを作成し、これらの各プリプロセッサーをそれぞれの列に関連付けます。
+# 変換器を作成し、これらの各プリプロセッサーをそれぞれの列に関連付けます。
 
 # %%
 from sklearn.compose import ColumnTransformer
@@ -794,8 +794,8 @@ preprocessor = ColumnTransformer([
 #
 # ![columntransformer diagram](figures/api_diagram-columntransformer.svg)
 #
-# 重要なことは、`ColumnTransformer`は、他のscikit-learnトランスフォーマーと同じです。
-# 特に、`Pipeline`と合わせます。
+# 重要なことは、`ColumnTransformer`は他のscikit-learn変換器と同様であるということです。
+# 特に、`Pipeline`で分類器と組み合わせることができます。
 
 # %%
 from sklearn.linear_model import LogisticRegression
@@ -808,12 +808,12 @@ model
 
 # %% [markdown]
 #
-# このモデルは以前のモデルよりも複雑ですが、それでも同じAPI
-# （ユーザーが呼び出すことができる同じメソッドのセット）に従います。
+# この最終的なモデルは以前のモデルよりも複雑ですが、それでも同じAPI
+# （ユーザーが呼び出すことができる同じメソッドのセット）に従っています。
 #
-# - `fit`は、データを前処理してから、前処理されたデータの分類子をトレーニングする
+# - `fit`は、データを前処理してから前処理されたデータの分類器をトレーニングする
 # - `predict`は、新しいデータを予測する
-# - `score`は、テストデータを予測し、予測を予想されるテストラベルと比較して、精度を計算する
+# - `score`は、テストデータを予測し、予測を期待されるテストラベルと比較して精度を計算する
 
 # %%
 data_train, data_test, target_train, target_test = train_test_split(
@@ -821,7 +821,7 @@ data_train, data_test, target_train, target_test = train_test_split(
 
 # %% [markdown]
 #
-# トレインセットでモデルをトレーニングします：
+# トレーニングセットでモデルをトレーニングします：
 
 # %%
 _ = model.fit(data_train, target_train)
@@ -845,7 +845,7 @@ target_test[:5]
 model.score(data_test, target_test)
 
 # %% [markdown]
-# ##　交差検定でのモデルの評価
+# ##　交差検証でのモデルの評価
 
 # %%
 from sklearn.model_selection import cross_validate
@@ -864,15 +864,15 @@ print("The mean cross-validation accuracy is: "
 # %% [markdown]
 # # Gradient-boosting treeモデル
 #
-# 線形モデルは、通常、トレーニングが早くて、展開が小さく、予測が速く、適切なベースラインが得られるため、優れています。
+# 線形モデルは、通常、トレーニングが早く、デプロイするのに小さく、予測が速く、適切なベースラインが得られるため、優れています。
 #
 # ただし、「ensemble of decision trees」などのより複雑なモデルがより高い予測
-# パフォーマンスになることを確認すると役立ちます。
-# ここで**gradient-boosting trees*モデルを使用して、その統計的パフォーマンスを評価します。
+# パフォーマンスになりうることを確認することはよく役立ちます。
+# ここでは**gradient-boosting trees*モデルを使用して、その統計的パフォーマンスを評価します。
 #
 # ツリーベースのモデルの場合、数値変数とカテゴリ変数の処理は線形モデルの場合よりも簡単です。
-# * 数値を**スケーリングする必要はありません**
-# * カテゴリ変数に**序数エンコーディングは十分**です。
+# * 数値を**スケーリングする必要はありません**。
+# * カテゴリ変数を**順序エンコーディングしてもよい**です。
 #
 
 # %%
@@ -904,5 +904,5 @@ model.score(data_test, target_test)
 # これは、データセットに多数のサンプルがあり、数値変数とカテゴリ変数が混在する有益な特徴の数が限られている
 # （たとえば、1000未満）場合によく見られます。
 #
-# これは、Gradient Boosted Machinesが表形式のデータを処理するため人気です。
+# これが、表形式のデータを処理するデータサイエンティストにGradient Boosted Machinesが非常に人気である理由です。
 

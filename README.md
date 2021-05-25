@@ -6,7 +6,7 @@
 
 - タイムテーブル
   - 10:00-12:00 [TDAとその機械学習応用](tutorial/)(TDA-TSSチュートリアル含む)
-  - 14:00-18:00 Scikit-learnチュートリアルと[環境設定](dev-setup/)
+  - 14:00-18:00 [Scikit-learnチュートリアル](scikit-learn-intro/)と[環境設定](dev-setup/)
 - 開催場所 Zoomミーティング
   - Zoomミーティングの詳細が参加者に送られています。問題があれば、ご連絡ください。
 

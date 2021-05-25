@@ -403,12 +403,12 @@ print(f"The test accuracy using a {model_name} is "
 # # 数値データの操作
 #
 # 先にいくつかのデータでkNNモデルをトレーニングしましたが、実際のデータはより複雑です：
-# これから
+# ここでは以下を目標とします：
 #
 # * 異種データセット内の数値データを特定する。
-# * 数値データに対応する列のサブセットを選択する。
-# * scikit-learnヘルパーを使用してデータをtrain-testセットに分割します。
-# * より複雑なscikit-learnモデルのトレーニングと評価。
+# * 数値データに対応する列たちを選択する。
+# * scikit-learnヘルパーを使用してデータをtrain-testセットに分割する。
+# * より複雑なscikit-learnモデルのトレーニングと評価を行う。
 #
 
 # %%
@@ -434,7 +434,7 @@ target
 #
 # ```{caution}
 # 数値データは数字で表されますが、数字は必ずしも数値データを表すとは限りません。
-# カテゴリはすでに数字でエンコードされている可能性があるため、これらの機能を識別する必要があります。
+# カテゴリはすでに数字でエンコードされている可能性があるため、これらの特徴を識別する必要があります。
 # ```
 #
 # データセット内の各列のデータ型を確認できます。
@@ -459,20 +459,19 @@ data["age"].describe()
 # %% [markdown]
 # 年齢は17歳から90歳の間で変化することがわかります。
 #
-# ここで、数値列のサブセットを新しいデータフレームに格納します。
+# ここで、数値列たちを新しいデータフレームに格納します。
 
 # %%
 data_numeric = data[numerical_columns]
 
 # %% [markdown]
-# ## トレインテストはデータセットを分割
+# ## データセットのトレーニング・テスト分割
 #
-# 前回トレーニングデータセットとテストデータセットの2つの別々のデータセットをロードしました。
+# 前回はトレーニングデータセットとテストデータセットの2つの別々のデータセットをロードしました。
 # ただし、2つの異なるファイルに別々のデータセットがあることは珍しいことです。
-# ほとんどの場合、メモリにロードされた後に分割する必要があるすべてのデータを含む単一のファイルがあります。
-#
-# Scikit-learnは`sklearn.model_selection.train_test_split`を用意しています。
-# これでデータセットを2つのサブセットに自動的に分割できます。
+# ほとんどの場合、すべてのデータを含む単一のファイルがあり、それをメモリにロードされた後に分割する必要があります。
+# Scikit-learnはヘルパー関数`sklearn.model_selection.train_test_split`を用意しています。
+# これでデータセットを2つのサブデータセットに自動的に分割できます。
 
 # %%
 from sklearn.model_selection import train_test_split
@@ -483,7 +482,7 @@ data_train, data_test, target_train, target_test = train_test_split(
 
 # %% [markdown]
 # `train_test_split`を呼び出すときに、サンプルの25％をテストセットに入れ、
-# 残りのサンプル（75％）をトレーニングセットで使用を指定しました。
+# 残りのサンプル（75％）をトレーニングセットで使用可能なように指定しました。
 
 # %%
 print(f"Number of samples in testing: {data_test.shape[0]} => "
@@ -496,7 +495,7 @@ print(f"Number of samples in training: {data_train.shape[0]} => "
       f" original set")
 
 # %% [markdown]
-# ここで、線形モデルファミリに属する​​、ロジスティック回帰モデルを使用します。
+# ここでは、線形モデルの族に属する​​、ロジスティック回帰モデルを使用します。
 
 # %%
 from sklearn.linear_model import LogisticRegression
@@ -504,14 +503,14 @@ from sklearn.linear_model import LogisticRegression
 model = LogisticRegression()
 
 # %% [markdown]
-# モデルが作成されたので、kNNモデルの使用とまったく同じ方法でモデルを使用できます。
-# 特に、`fit`を使用して、トレーニングデータとラベルを使用してモデルをトレーニングできます。
+# モデルが作成されたので、kNNモデルとまったく同じ方法でモデルを使用できます。
+# 特に、`fit`メソッドを使用して、トレーニングデータとラベルを使用してモデルを訓練できます。
 
 # %%
 model.fit(data_train, target_train)
 
 # %% [markdown]
-# `score`を使用して、テストセットのモデル統計パフォーマンスを確認できます。
+# `score`を使用して、テストセットにおけるモデル統計パフォーマンスを確認できます。
 
 # %%
 accuracy = model.score(data_test, target_test)

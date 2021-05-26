@@ -17,6 +17,7 @@
 #
 # ## 目次
 #
+# * インストール
 # * データ探索
 # * scikit-learnを使用した最初のモデル
 # * 数値データの操作
@@ -30,6 +31,28 @@
 #
 # このチュートリアルは、MOOCコース「[Machine learning with scikit-learn](https://www.fun-mooc.fr/fr/cours/machine-learning-python-scikit-learn/)」
 # の資料に基づいており、Creative Commons Attribution-ShareAlike 4.0ライセンスが適用されています。
+
+# %% [markdown]
+# # インストール
+# 
+# virtualenvに使用を勧めます：
+# - `venv`の場合は：
+#   ```
+#   python -m venv scikit-intro.venv
+#   source scikit-intro.venv/bin/activate
+#   ```
+# - `pyenv`の場合は：
+#   ```
+#   pyenv virtualenv scikit-intro
+#   pyenv activate scikit-intro
+#   ```
+#
+# `scikit-learn`と`seaborn`を`pip`でインストールします:
+# ```
+# pip install scikit-learn seaborn
+# ```
+#
+
 
 # %% [markdown]
 # # データ探索
